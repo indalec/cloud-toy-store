@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section class="hero is-info is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Add a New Product</h1>
+            <h2 class="subtitle">Fill in the details below</h2>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container" th:insert="fragments :: productForm(${product}, '/addItem')"></div>
+</section>
+</body>
+</html>

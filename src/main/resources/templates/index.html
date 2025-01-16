@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link
+            rel="stylesheet"
+            href="/style.css"
+    >
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <h1 class="title">Product List</h1>
+
+        <a class="button is-primary" href="/addItem">Add New Product</a>
+        <br/><br/>
+
+        <table class="table is-striped is-fullwidth">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id()}"></td>
+                <td th:text="${product.name()}"></td>
+                <td th:text="${product.description()}"></td>
+                <td th:text="${product.price()}"></td>
+                <td th:text="${product.stockQuantity()}"></td>
+                <td>
+                    <form th:action="@{/deleteProduct/{id}(id=${product.id()})}" method="post" style="display:inline;">
+                        <button class="button is-danger" type="submit">Delete</button>
+                    </form>
+                    <a class="button is-info" th:href="@{/editItem/{id}(id=${product.id()})}">Edit</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+</body>
+</html>
