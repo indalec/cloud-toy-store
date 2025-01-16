@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>j24.e01</groupId>
-	<artifactId>f6-db-basics-exercise</artifactId>
+	<artifactId>MyWorkAPI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>f6-db-basics-exercise</name>
+	<name>MyWorkAPI</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
